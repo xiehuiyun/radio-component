@@ -1,6 +1,9 @@
 <template>
-	<label class="left_center radio-div" @tap="selfClick">
-		<text class="iconfont radio" :style="'color:'+color+';'" :class="{'icon-radio':isCheck,'icon-RadioButton':!isCheck}"></text>
+	<label class="radio-div" @tap="selfClick">
+		<text class="iconfont radio" 
+			:class="{'icon-radio':isCheck,'icon-RadioButton':!isCheck}"
+			:style="'color:'+color+';font-size:'+size+'px;'">
+		</text>
 		<text>{{label}}</text>
 	</label>
 </template>
@@ -12,6 +15,10 @@
 		 * 显示的名称 对应的数值  是否选中
 		 */
 		props: {
+			size: {
+				type: [Number,String],
+				default: 25
+			},
 			color: {
 				type: String,
 				default: '#00FF00'
@@ -45,7 +52,7 @@
 			selfClick() {
 				if (!this.isCheck) {
 					this.isCheck = !this.isCheck;
-					if(this.xhyRadioGroup){
+					if (this.xhyRadioGroup) {
 						this.xhyRadioGroup.setSelect(this.value !== '' ? this.value : this.label);
 					}
 					this.$emit('itemClick');
@@ -61,14 +68,11 @@
 <style scoped>
 	@import url("/static/xhy-radio/xhy-iconfont.css");
 
-	.radio {
-		width: 48upx;
-		height: 48upx;
-		margin-right: 10upx;
-	}
-
 	.radio-div {
 		min-width: 230upx;
 		margin-right: 10upx;
+		display: inline-flex;
+		justify-content: flex-start;
+		align-items: center;
 	}
 </style>
