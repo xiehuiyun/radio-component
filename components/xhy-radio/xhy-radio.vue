@@ -59,7 +59,7 @@
 </script>
 
 <style scoped>
-	@import url("/static/xhy-iconfont.css");
+	@import url("/static/xhy-radio/xhy-iconfont.css");
 
 	.radio {
 		width: 48upx;
