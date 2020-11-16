@@ -1,22 +1,22 @@
 <template>
 	<view>
 		<view class="padding">单独使用MyRadio</view>
-		<my-radio :checked="singleRadioCheck" label="单独radio" value="single" color="#ff55ff"></my-radio>
+		<xhy-radio :checked="singleRadioCheck" label="单独radio" value="single" color="#ff55ff"></xhy-radio>
 		<view class="padding">RadioGroup</view>
-		<my-radio-group @change="setRadioSelect">
-			<my-radio :checked="radioSelect=='radio1'" label="radio1" value="radio1" color="#ff55ff"></my-radio>
-			<my-radio :checked="radioSelect=='radio2'" label="radio2" value="radio2" color="#ff55ff"></my-radio>
-		</my-radio-group>
+		<xhy-radio-group @change="setRadioSelect">
+			<xhy-radio :checked="radioSelect=='radio1'" label="radio1" value="radio1" color="#ff55ff"></xhy-radio>
+			<xhy-radio :checked="radioSelect=='radio2'" label="radio2" value="radio2" color="#ff55ff"></xhy-radio>
+		</xhy-radio-group>
 	</view>
 </template>
 
 <script>
-	import MyRadioGroup from '@/components/radio/my-radio-group';
-	import MyRadio from '@/components/radio/my-radio';
+	import XhyRadioGroup from '@/components/xhy-radio/xhy-radio-group';
+	import XhyRadio from '@/components/xhy-radio/xhy-radio';
 	export default {
 		components:{
-			MyRadioGroup,
-			MyRadio
+			XhyRadioGroup,
+			XhyRadio
 		},
 		data() {
 			return {

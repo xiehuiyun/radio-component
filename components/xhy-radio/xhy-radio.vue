@@ -7,7 +7,7 @@
 
 <script>
 	export default {
-		name: "MyRadio",
+		name: "XhyRadio",
 		/**
 		 * 显示的名称 对应的数值  是否选中
 		 */
@@ -29,7 +29,7 @@
 				default: ''
 			}
 		},
-		inject: ['radioGroup'],
+		inject: ['xhyRadioGroup'],
 		data() {
 			return {
 				isCheck: false
@@ -45,7 +45,9 @@
 			selfClick() {
 				if (!this.isCheck) {
 					this.isCheck = !this.isCheck;
-					this.radioGroup.setSelect(this.value !== '' ? this.value : this.label);
+					if(this.xhyRadioGroup){
+						this.xhyRadioGroup.setSelect(this.value !== '' ? this.value : this.label);
+					}
 					this.$emit('itemClick');
 				}
 			},
@@ -57,7 +59,7 @@
 </script>
 
 <style scoped>
-	@import url("/static/iconfont.css");
+	@import url("/static/xhy-iconfont.css");
 
 	.radio {
 		width: 48upx;

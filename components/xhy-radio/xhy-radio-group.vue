@@ -6,10 +6,10 @@
 
 <script>
 	export default{
-		name:'MyRadioGroup',
+		name:'XhyRadioGroup',
 		provide(){
 			return {
-				radioGroup:this
+				xhyRadioGroup:this
 			}
 		},
 		data(){
